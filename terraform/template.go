@@ -163,7 +163,15 @@ func NewApplyTemplate(template string) *ApplyTemplate {
 
 // Execute binds the execution result of terraform command into tepmlate
 func (t *DefaultTemplate) Execute() (resp string, err error) {
-	tpl, err := template.New("default").Parse(t.Template)
+	funcMap := template.FuncMap{
+		"attr": func(s string) template.HTMLAttr {
+			return template.HTMLAttr(s)
+		},
+		"safe": func(s string) template.HTML {
+			return template.HTML(s)
+		},
+	}
+	tpl, err := template.New("default").Funcs(funcMap).Parse(t.Template)
 	if err != nil {
 		return resp, err
 	}
