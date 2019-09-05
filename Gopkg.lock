@@ -70,6 +70,21 @@
   version = "v0.0.4"
 
 [[projects]]
+  digest = "1:19e94b127e8d8e08a17f74c8ced2d7252500971294c5e1536687e2319da6031b"
+  name = "github.com/mercari/tfnotify"
+  packages = [
+    "config",
+    "notifier",
+    "notifier/github",
+    "notifier/slack",
+    "notifier/typetalk",
+    "terraform",
+  ]
+  pruneopts = "NUT"
+  revision = "7e0cdd47b9e4318f226e2728b5d4d24500442ff6"
+  version = "v0.3.1"
+
+[[projects]]
   digest = "1:f2506d323836b8fa307d3cdcadd5475015367b95f465a002a8a0a7d77b505b8b"
   name = "github.com/nulab/go-typetalk"
   packages = [
@@ -159,6 +174,12 @@
     "github.com/lestrrat-go/slack",
     "github.com/lestrrat-go/slack/objects",
     "github.com/mattn/go-colorable",
+    "github.com/mercari/tfnotify/config",
+    "github.com/mercari/tfnotify/notifier",
+    "github.com/mercari/tfnotify/notifier/github",
+    "github.com/mercari/tfnotify/notifier/slack",
+    "github.com/mercari/tfnotify/notifier/typetalk",
+    "github.com/mercari/tfnotify/terraform",
     "github.com/nulab/go-typetalk/typetalk/shared",
     "github.com/nulab/go-typetalk/typetalk/v1",
     "github.com/urfave/cli",

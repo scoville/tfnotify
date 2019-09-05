@@ -28,7 +28,7 @@ func TestLoadFile(t *testing.T) {
 					Github: GithubNotifier{
 						Token: "$GITHUB_TOKEN",
 						Repository: Repository{
-							Owner: "mercari",
+							Owner: "scoville",
 							Name:  "tfnotify",
 						},
 					},
@@ -68,7 +68,7 @@ func TestLoadFile(t *testing.T) {
 					Github: GithubNotifier{
 						Token: "$GITHUB_TOKEN",
 						Repository: Repository{
-							Owner: "mercari",
+							Owner: "scoville",
 							Name:  "tfnotify",
 						},
 					},

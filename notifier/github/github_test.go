@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/google/go-github/github"
-	"github.com/mercari/tfnotify/terraform"
+	"github.com/scoville/tfnotify/terraform"
 )
 
 type fakeAPI struct {

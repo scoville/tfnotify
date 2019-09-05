@@ -3,7 +3,7 @@ package github
 import (
 	"testing"
 
-	"github.com/mercari/tfnotify/terraform"
+	"github.com/scoville/tfnotify/terraform"
 )
 
 func TestNotifyNotify(t *testing.T) {

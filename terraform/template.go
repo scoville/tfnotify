@@ -3,6 +3,8 @@ package terraform
 import (
 	"bytes"
 	"html/template"
+	"os"
+	"strings"
 )
 
 const (
@@ -166,13 +168,18 @@ func (t *DefaultTemplate) Execute() (resp string, err error) {
 		return resp, err
 	}
 	var b bytes.Buffer
-	if err := tpl.Execute(&b, map[string]interface{}{
+	m := map[string]interface{}{
 		"Title":   t.Title,
 		"Message": t.Message,
 		"Result":  "",
 		"Body":    t.Result,
 		"Link":    t.Link,
-	}); err != nil {
+	}
+	for _, v := range os.Environ() {
+		splitted := strings.Split(v, "=")
+		m[splitted[0]] = splitted[1]
+	}
+	if err := tpl.Execute(&b, m); err != nil {
 		return resp, err
 	}
 	resp = b.String()

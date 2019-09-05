@@ -1,7 +1,7 @@
 package github
 
 import (
-	"github.com/mercari/tfnotify/terraform"
+	"github.com/scoville/tfnotify/terraform"
 )
 
 // NotifyService handles communication with the notification related

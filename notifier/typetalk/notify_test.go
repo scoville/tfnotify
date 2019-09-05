@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/mercari/tfnotify/terraform"
 	typetalkShared "github.com/nulab/go-typetalk/typetalk/shared"
 	typetalk "github.com/nulab/go-typetalk/typetalk/v1"
+	"github.com/scoville/tfnotify/terraform"
 )
 
 func TestNotify(t *testing.T) {

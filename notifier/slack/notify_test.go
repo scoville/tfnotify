@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/mercari/tfnotify/terraform"
 	"github.com/lestrrat-go/slack/objects"
+	"github.com/scoville/tfnotify/terraform"
 )
 
 func TestNotify(t *testing.T) {

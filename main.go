@@ -5,12 +5,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/mercari/tfnotify/config"
-	"github.com/mercari/tfnotify/notifier"
-	"github.com/mercari/tfnotify/notifier/github"
-	"github.com/mercari/tfnotify/notifier/slack"
-	"github.com/mercari/tfnotify/notifier/typetalk"
-	"github.com/mercari/tfnotify/terraform"
+	"github.com/scoville/tfnotify/config"
+	"github.com/scoville/tfnotify/notifier"
+	"github.com/scoville/tfnotify/notifier/github"
+	"github.com/scoville/tfnotify/notifier/slack"
+	"github.com/scoville/tfnotify/notifier/typetalk"
+	"github.com/scoville/tfnotify/terraform"
 
 	"github.com/urfave/cli"
 )

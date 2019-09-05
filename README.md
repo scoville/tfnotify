@@ -3,12 +3,12 @@ tfnotify
 
 [![][circleci-svg]][circleci] [![][codecov-svg]][codecov] [![][goreportcard-svg]][goreportcard]
 
-[circleci]: https://circleci.com/gh/mercari/tfnotify/tree/master
-[circleci-svg]: https://circleci.com/gh/mercari/tfnotify/tree/master.svg?style=svg
-[codecov]: https://codecov.io/gh/mercari/tfnotify
-[codecov-svg]: https://codecov.io/gh/mercari/tfnotify/branch/master/graph/badge.svg
-[goreportcard]: https://goreportcard.com/report/github.com/mercari/tfnotify
-[goreportcard-svg]: https://goreportcard.com/badge/github.com/mercari/tfnotify
+[circleci]: https://circleci.com/gh/scoville/tfnotify/tree/master
+[circleci-svg]: https://circleci.com/gh/scoville/tfnotify/tree/master.svg?style=svg
+[codecov]: https://codecov.io/gh/scoville/tfnotify
+[codecov-svg]: https://codecov.io/gh/scoville/tfnotify/branch/master/graph/badge.svg
+[goreportcard]: https://goreportcard.com/report/github.com/scoville/tfnotify
+[goreportcard-svg]: https://goreportcard.com/badge/github.com/scoville/tfnotify
 
 tfnotify parses Terraform commands' execution result and applies it to an arbitrary template and then notifies it to GitHub comments etc.
 
@@ -32,7 +32,7 @@ Grab the binary from GitHub Releases (Recommended)
 or
 
 ```console
-$ go get -u github.com/mercari/tfnotify
+$ go get -u github.com/scoville/tfnotify
 ```
 
 
@@ -86,7 +86,7 @@ notifier:
   github:
     token: $GITHUB_TOKEN
     repository:
-      owner: "mercari"
+      owner: "scoville"
       name: "tfnotify"
 terraform:
   fmt:
@@ -135,7 +135,7 @@ notifier:
     token: $GITHUB_TOKEN
     base_url: $GITHUB_BASE_URL
     repository:
-      owner: "mercari"
+      owner: "scoville"
       name: "tfnotify"
 terraform:
   fmt:
