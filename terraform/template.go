@@ -163,15 +163,7 @@ func NewApplyTemplate(template string) *ApplyTemplate {
 
 // Execute binds the execution result of terraform command into tepmlate
 func (t *DefaultTemplate) Execute() (resp string, err error) {
-	funcMap := template.FuncMap{
-		"attr": func(s string) template.HTMLAttr {
-			return template.HTMLAttr(s)
-		},
-		"safe": func(s string) template.HTML {
-			return template.HTML(s)
-		},
-	}
-	tpl, err := template.New("default").Funcs(funcMap).Parse(t.Template)
+	tpl, err := template.New("default").Parse(t.Template)
 	if err != nil {
 		return resp, err
 	}
@@ -201,13 +193,18 @@ func (t *FmtTemplate) Execute() (resp string, err error) {
 		return resp, err
 	}
 	var b bytes.Buffer
-	if err := tpl.Execute(&b, map[string]interface{}{
+	m := map[string]interface{}{
 		"Title":   t.Title,
 		"Message": t.Message,
 		"Result":  "",
 		"Body":    t.Result,
 		"Link":    t.Link,
-	}); err != nil {
+	}
+	for _, v := range os.Environ() {
+		splitted := strings.Split(v, "=")
+		m[splitted[0]] = splitted[1]
+	}
+	if err := tpl.Execute(&b, m); err != nil {
 		return resp, err
 	}
 	resp = b.String()
@@ -221,13 +218,18 @@ func (t *PlanTemplate) Execute() (resp string, err error) {
 		return resp, err
 	}
 	var b bytes.Buffer
-	if err := tpl.Execute(&b, map[string]interface{}{
+	m := map[string]interface{}{
 		"Title":   t.Title,
 		"Message": t.Message,
 		"Result":  t.Result,
 		"Body":    t.Body,
 		"Link":    t.Link,
-	}); err != nil {
+	}
+	for _, v := range os.Environ() {
+		splitted := strings.Split(v, "=")
+		m[splitted[0]] = splitted[1]
+	}
+	if err := tpl.Execute(&b, m); err != nil {
 		return resp, err
 	}
 	resp = b.String()
@@ -241,13 +243,18 @@ func (t *ApplyTemplate) Execute() (resp string, err error) {
 		return resp, err
 	}
 	var b bytes.Buffer
-	if err := tpl.Execute(&b, map[string]interface{}{
+	m := map[string]interface{}{
 		"Title":   t.Title,
 		"Message": t.Message,
 		"Result":  t.Result,
 		"Body":    t.Body,
 		"Link":    t.Link,
-	}); err != nil {
+	}
+	for _, v := range os.Environ() {
+		splitted := strings.Split(v, "=")
+		m[splitted[0]] = splitted[1]
+	}
+	if err := tpl.Execute(&b, m); err != nil {
 		return resp, err
 	}
 	resp = b.String()
